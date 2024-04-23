@@ -1,6 +1,45 @@
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
+import ProductCart, { Product } from "./ProductCart";
+
+const products: Product[] = [
+  {
+    id: "1",
+    name: "Margarita Pizza",
+    description: "This is a very tasty pizza",
+    image: "/pizza-main.png",
+    price: 500,
+  },
+  {
+    id: "2",
+    name: "Margarita Pizza",
+    description: "This is a very tasty pizza",
+    image: "/pizza-main.png",
+    price: 500,
+  },
+  {
+    id: "3",
+    name: "Margarita Pizza",
+    description: "This is a very tasty pizza",
+    image: "/pizza-main.png",
+    price: 500,
+  },
+  {
+    id: "4",
+    name: "Margarita Pizza",
+    description: "This is a very tasty pizza",
+    image: "/pizza-main.png",
+    price: 500,
+  },
+  {
+    id: "5",
+    name: "Margarita Pizza",
+    description: "This is a very tasty pizza",
+    image: "/pizza-main.png",
+    price: 500,
+  },
+];
 
 export default function Home() {
   return (
@@ -32,16 +71,28 @@ export default function Home() {
 
       <section>
         <div className="container py-12">
-          <Tabs defaultValue="Pizza" className="w-[400px]">
+          <Tabs defaultValue="pizza">
             <TabsList>
-              <TabsTrigger className="text-md" value="pizza">Pizza</TabsTrigger>
-              <TabsTrigger className="text-md" value="bevrages">Bevrages</TabsTrigger>
+              <TabsTrigger className="text-md" value="pizza">
+                Pizza
+              </TabsTrigger>
+              <TabsTrigger className="text-md" value="bevrages">
+                Bevrages
+              </TabsTrigger>
             </TabsList>
             <TabsContent value="pizza">
-              Make changes to your account here.
+              <div className="grid grid-cols-4 gap-6 mt-6">
+                {products.map((product) => (
+                  <ProductCart product={product} key={product.id} />
+                ))}
+              </div>
             </TabsContent>
             <TabsContent value="bevrages">
-              Change your password here.
+            <div className="grid grid-cols-4 gap-6 mt-6">
+                {products.map((product) => (
+                  <ProductCart product={product} key={product.id} />
+                ))}
+              </div>
             </TabsContent>
           </Tabs>
         </div>
