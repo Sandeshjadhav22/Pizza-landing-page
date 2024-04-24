@@ -40,7 +40,9 @@ const ProductCard = ({ product }: PropTypes) => {
                     <span className="font-bold">₹{product.price}</span>
                 </p>
 
-                <Dialog>
+                <Button>Add to cart</Button>
+
+                {/* <Dialog>
                     <DialogTrigger className="bg-orange-200 hover:bg-orange-300 text-orange-500 px-6 py-2 rounded-full shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150">
                         Choose
                     </DialogTrigger>
@@ -154,7 +156,7 @@ const ProductCard = ({ product }: PropTypes) => {
                             </div>
                         </div>
                     </DialogContent>
-                </Dialog>
+                </Dialog> */}
             </CardFooter>
         </Card>
     );
