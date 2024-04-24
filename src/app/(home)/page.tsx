@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import ProductCart, { Product } from "./components/ProductCart";
+import DataSetter from "./components/data-setter";
 
 const products: Product[] = [
   {
@@ -42,8 +43,14 @@ const products: Product[] = [
 ];
 
 export default function Home() {
+  const data = {
+    id: 1,
+    title: "computer",
+  };
+
   return (
     <>
+      <DataSetter data={data} />
       <section className="bg-white">
         <div className="container flex justify-between py-24">
           <div>
@@ -88,7 +95,7 @@ export default function Home() {
               </div>
             </TabsContent>
             <TabsContent value="bevrages">
-            <div className="grid grid-cols-4 gap-6 mt-6">
+              <div className="grid grid-cols-4 gap-6 mt-6">
                 {products.map((product) => (
                   <ProductCart product={product} key={product.id} />
                 ))}
